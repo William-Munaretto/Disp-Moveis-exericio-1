@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:visibility="visible"
-    tools:context=".MainActivity"
-    tools:visibility="visible">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainActivity"
+        tools:visibility="visible"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nomeTextView"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="20dp"
@@ -24,18 +22,17 @@
             android:layout_marginRight="20dp"
             android:background="#40E0D0"
             android:textStyle="bold"
-            android:inputType="textCapCharacters" />
+            android:text="@string/txt_nome" />
 
         <EditText
+            android:id="@+id/edtNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="@string/txt_nome"
-            android:inputType="text" />
+            android:inputType="textCapCharacters"/>
 
         <TextView
-            android:id="@+id/sexoTextView"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="20dp"
@@ -45,12 +42,19 @@
             android:text="@string/txt_sexo"
             android:textStyle="bold" />
 
-        <LinearLayout
+        <RadioGroup
+            android:id="@+id/groupRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonMasc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_masculino" />
 
             <RadioButton
                 android:id="@+id/radioButtonFem"
@@ -59,18 +63,9 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"
                 android:text="@string/btn_feminino" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMasc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="20dp"
-                android:text="@string/btn_masculino" />
-        </LinearLayout>
+        </RadioGroup>
 
         <TextView
-            android:id="@+id/emailTextView"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="20dp"
@@ -81,16 +76,14 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/emailInputView"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="@string/txt_email"
             android:inputType="textEmailAddress" />
 
         <TextView
-            android:id="@+id/telefoneTextView"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="20dp"
@@ -101,12 +94,11 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/telefoneInputView"
+            android:id="@+id/edtTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="@string/txt_telefone"
             android:inputType="number" />
 
         <TextView
@@ -139,7 +131,7 @@
                 android:id="@+id/cinema"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"
                 android:text="@string/cbox_Cinema" />
 
@@ -160,27 +152,34 @@
                 android:text="@string/cbox_Gastronomia" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/NotifyTextView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="#40E0D0"
-            android:text="@string/ativar_notify"
-            android:textStyle="bold" />
-
-        <Switch
-            android:id="@+id/notifySwitch"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="20dp" />
+            android:orientation="vertical">
+            <TextView
+                android:id='@+id/txtnotify'
+                android:text="@string/NotifyTxt"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="#40E0D0"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id='@+id/notify'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:textOff="@string/off"
+                android:textOn="@string/on"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
@@ -202,7 +201,46 @@
                 android:text="@string/btn_Limpar" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/lblDados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/teal_200"
+            android:visibility="invisible"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtSexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtTelefone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtNotify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtPref"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
 

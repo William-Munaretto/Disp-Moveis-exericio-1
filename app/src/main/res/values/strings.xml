@@ -2,16 +2,18 @@
     <string name="app_name">Munapplication</string>
     <string name="txt_nome">Nome</string>
     <string name="txt_sexo">Sexo</string>
-    <string name="txt_email">E-mail</string>
-    <string name="txt_telefone">Telefone</string>
     <string name="btn_masculino">Masculino</string>
     <string name="btn_feminino">Feminino</string>
+    <string name="txt_email">E-mail</string>
+    <string name="txt_telefone">Telefone</string>
     <string name="txt_preferencias">Preferências</string>
     <string name="cbox_Música">Música</string>
     <string name="cbox_Cinema">Cinema</string>
-    <string name="cbox_Esporte">Exportes</string>
+    <string name="cbox_Esporte">Esportes</string>
     <string name="cbox_Gastronomia">Gastronomia</string>
-    <string name="ativar_notify">Ativar Notificações</string>
     <string name="btn_Exibir">Exibir</string>
     <string name="btn_Limpar">Limpar</string>
+    <string name="on">Sim</string>
+    <string name="off">Nao</string>
+    <string name="NotifyTxt">Notificações</string>
 </resources>
